@@ -1,0 +1,30 @@
+{{/*
+  Usage example:
+  {{ partial "tech-card.html" (dict "cards" (slice
+    (dict "icon" "fa-cog" "title" "Application Definition & Image Build" "subtitle" "Helm, Operator Framework, Podman" "items" (slice "Helm - writing deployment templates since Helm v.2, everyday useage" "Operator Framework - System Operator project - deploys Helm charts alingside with Ansible automation and gitops based configuration" "Podman - Docker-less builds for work & self-hosted environment"))
+    (dict "icon" "fa-server" "title" "VMs & Containers" "subtitle" "libvirt, LXC, Docker" "items" (slice "PoC…" "Implement"))
+    (dict "icon" "fa-message" "title" "Message systems" "subtitle" "Kafka, Strimzi, ntfy, IBM MQ, RabbbitMQ" "items" (slice "Supporting (L2/L3) Strimzi Kafka instances in regulated environment, Preparing and executing upgrades and ZooKeeper to KRaft migration" "Implement"))
+  )) }}
+*/}}
+
+{{- $cards := .cards -}}
+{{- range $cards }}
+<section class="flex items-start gap-6 border-t border-gray-300 pt-6 pb-10">
+  <!-- Icon Section -->
+  <div class="flex flex-col items-center">
+    <div class="border border-gray-300 p-4 rounded-md hover:scale-105 transition-transform">
+      <i class="fa-solid {{ .icon }} text-3xl text-gray-700"></i>
+    </div>
+  </div>
+  <!-- Text Section -->
+  <div class="flex-1">
+    <h1 class="text-2xl font-semibold mb-3">{{ .title }}</h1>
+    <h2 class="text-base uppercase flex flex-wrap text-gray-700 font-medium mb-1">{{ .subtitle | markdownify }}</h2>
+    <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+      {{- range .items }}
+      <li>{{ . | markdownify }}</li>
+      {{- end }}
+    </ul>
+  </div>
+</section>
+{{- end }}
