@@ -1,9 +1,9 @@
 name = "Hermit-V2"
 license = "MIT"
-licenselink = "https://github.com/1bl4z3r/hermit-V2/blob/main/LICENSE"
+licenselink = "https://github.com/stepanpelc/hermit-V2/blob/main/LICENSE"
 description = "Continuing Hermit's legacy to be minimal and fast theme"
-homepage = "https://github.com/1bl4z3r/hermit-V2"
-demosite = "https://1bl4z3r.github.io/hermit-V2/"
+homepage = "https://github.com/stepanpelc/hermit-V2"
+demosite = "https://stepanpelc.github.io/hermit-V2/"
 tags = ["blog", "minimal", "dark", "responsive", "landing", "dark mode"]
 features = [
   "single column",
@@ -24,5 +24,5 @@ features = [
   name = "BLZR"
   homepage = "https://blzr.sbs"
 [original]
-  name = "Track3"
-  repo = "https://github.com/Track3/hermit"
+  name = "1bl4z3r"
+  repo = "https://github.com/1bl4z3r/hermitv2"
