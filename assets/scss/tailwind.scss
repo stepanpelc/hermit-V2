@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-// Custom SCSS imports can follow here if you want to keep some custom styles
-// @import "colors";
-// @import "fonts";
-// ...
+// Import your custom SCSS after Tailwind
+@import "colors";
+@import "fonts";
+@import "admonition";
+@import "mixins";
+@import "normalize.scss";
+@import "syntax.scss";
+@import "animate.scss";
+@import "scrolltotop.scss";
+@import "socialshare.scss";
+@import "gallery.scss";

@@ -20,6 +20,8 @@
 		{{- $PRNTCSS := resources.Get "custom_css/print.scss" | resources.ExecuteAsTemplate "css/style.css" $rootCtx | toCSS | minify | fingerprint -}}
 	<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="print" href="{{ $PRNTCSS.Permalink }}" {{ printf "integrity=%q" $PRNTCSS.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous">
 	{{- end -}}
+	{{ $tailwind := resources.Get "scss/tailwind.scss" | resources.ExecuteAsTemplate "css/tailwind.css" . | toCSS | minify | fingerprint }}
+	<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="{{ $tailwind.Permalink }}" {{ printf "integrity=%q" $tailwind.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous">
 	{{- block "head" . -}}{{- end -}}
 	{{- if templates.Exists "partials/extra-head.html" -}}{{- partial "extra-head.html" . -}}{{- end -}}
 </head>
