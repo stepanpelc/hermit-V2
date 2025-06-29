@@ -30,3 +30,7 @@
 		<div id="home-footer">{{- if templates.Exists "partials/index-footer.html" -}}{{- partialCached "index-footer.html" . -}}{{- else -}}{{- partial "footer.html" . -}}{{- end -}}</div>
 	</div>
 {{ end }}
+
+<main class="hyphens-auto">
+  {{ block "main" . }}{{ end }}
+</main>
